@@ -1,0 +1,228 @@
+/* 🌟 Footer Styling */
+.footer {
+  background: linear-gradient(to right, #fdfdfd, #f3f3f3);
+  padding: 50px 20px;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+/* 📌 Footer Container */
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🎨 Logo & Name */
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.logoContainer img {
+  width: 80px; /* Increased size */
+  height: 80px; /* Ensures it stays round */
+  border-radius: 50%; /* Makes it round */
+  object-fit: cover; /* Ensures proper image scaling */
+}
+
+.logoContainer h3 {
+  font-size: 25px;
+  font-weight: 700;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.logoContainer:hover {
+  transform: scale(1.05);
+}
+
+/* ☎️ Contact Grid */
+.contactGrid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+/* 🛠️ Contact Box */
+.contactBox {
+  width: 220px;
+  padding: 15px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contactBox:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contactBox h4 {
+  font-size: 16px;
+  color: black;
+  margin-bottom: 8px;
+}
+
+.contactBox p a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #555;
+  transition: color 0.3s ease-in-out;
+}
+
+.contactBox p a:hover {
+  color: #0073e6;
+}
+
+/* 🔗 Footer Links */
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 20px;
+}
+
+/* 📌 Quick Links */
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.footerLinks a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s ease-in-out;
+  position: relative;
+}
+
+.footerLinks a:hover {
+  color: #0073e6;
+}
+
+/* 📌 Underline Effect on Hover */
+.footerLinks a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #0073e6;
+  transition: width 0.3s ease-in-out;
+}
+
+.footerLinks a:hover::after {
+  width: 100%;
+}
+
+.instagramBox {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #e4405f;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instagramBox:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.instagramBox a {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Ensures proper spacing */
+  text-decoration: none;
+  color: #e4405f;
+}
+
+.instagramBox a:hover {
+  color: #d6249f;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  font-size: 18px; /* Ensures icon matches text size */
+}
+
+
+/* 🏛️ Copyright */
+.copyright {
+  border-top: 1px solid #ddd;
+  padding-top: 12px;
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+}
+
+/* 📌 Copyright Link */
+.copyright a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #0073e6;
+  transition: color 0.3s ease-in-out;
+}
+
+.copyright a:hover {
+  color: black;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .logoContainer {
+    flex-direction: column; /* Stack logo and text */
+    gap: 10px;
+    text-align: center;
+  }
+  .logoContainer img {
+    width: 100px; /* Decreased size */
+    height: 100px; /* Ensures it stays round */
+  }
+  .logoContainer h3 {
+    font-size: 25px;
+  }
+  .contactGrid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footerLinks {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .instagramBox {
+    margin-top: 15px;
+  }
+}

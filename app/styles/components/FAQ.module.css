@@ -1,0 +1,117 @@
+/* ✅ FAQ Section - Modern White Theme */
+.faqSection {
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
+  padding: 80px 20px;
+  text-align: center;
+  border-top: 2px solid #e0e0e0;
+
+  /* 📌 Added Margin on All Sides */
+  margin: 20px;  /* Adjust for spacing */
+  max-width: 100%; /* Ensures it doesn't stretch too much */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Optional: Adds depth */
+}
+/* 📌 Container */
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* 🏷️ Heading */
+.heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 🔽 FAQ Item */
+.faqItem {
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.faqItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* ❓ FAQ Question */
+.question {
+  width: 100%;
+  background: white;
+  border: none;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+.question:hover {
+  background: #f4f4f4;
+}
+
+/* ➕ Expand/Collapse Icon */
+.icon {
+  font-size: 22px;
+  color: #0073e6;
+  transition: transform 0.3s ease;
+}
+
+/* ✅ FAQ Answer */
+.answer {
+  color: #444;
+  font-size: 16px;
+  text-align: left;
+  padding: 0 16px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease-in-out, padding 0.3s;
+}
+
+/* ✅ Show Answer */
+.show {
+  max-height: 150px;
+  opacity: 1;
+  padding: 16px;
+}
+
+/* 🎯 Active Question */
+.active {
+  color: #0073e6;
+}
+
+.active .icon {
+  transform: rotate(180deg);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 28px;
+  }
+  .faqItem {
+    margin-bottom: 12px;
+  }
+
+  .question {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  .answer {
+    font-size: 14px;
+  }
+}

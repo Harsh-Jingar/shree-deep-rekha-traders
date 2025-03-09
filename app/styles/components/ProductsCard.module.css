@@ -1,0 +1,160 @@
+/* ✅ Product Categories */
+.categoryBlock {
+  background: #f1f0f0;
+  padding: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px; /* Reduced margin */
+  transition: transform 0.3s ease-in-out;
+}
+
+.categoryBlock:hover {
+  transform: translateY(-5px);
+}
+
+/* 🔹 Category Title */
+.categoryTitle {
+  font-size: 24px; /* Reduced for better spacing */
+  font-weight: 700;
+  color: #0073e6;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.categoryTitle::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: #000000;
+  margin: 8px auto 0;
+  border-radius: 5px;
+}
+
+/* ✅ Grid Layout for Product Cards */
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Smaller default card size */
+  gap: 15px; /* Reduced for better fitting */
+}
+
+/* 🔹 Product Card */
+.card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px; /* Reduced padding */
+  width: 100%;
+  max-width: 220px; /* Reduced max-width */
+  height: 360px; /* Adjusted height */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ✅ Image Styling */
+.image {
+  width: 100%;
+  height: 220px; /* Adjusted height */
+  object-fit: contain; /* Ensures full image fits */
+  background: #ffffff;
+}
+
+/* ✅ Product Title */
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-top: 5px; /* Reduced margin */
+  min-height: 40px; /* Adjusted to fit better */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* ✅ Price Styling */
+.price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #e60023;
+  margin-top: 4px; /* Reduced margin */
+}
+
+/* ❌ Message for Empty Categories */
+.noResults {
+  font-size: 1rem;
+  color: #777;
+  text-align: center;
+  padding: 8px;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 1024px) {
+  .productGrid {
+    grid-template-columns: repeat(3, 1fr); /* 3 products per row on tablets */
+  }
+}
+
+/* 📱 Mobile View - 2 Products Per Row */
+@media (max-width: 768px) {
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .card {
+    height: 330px; /* Slightly smaller */
+    max-width: 180px;
+  }
+
+  .image {
+    height: 180px;
+  }
+
+  .cardTitle {
+    font-size: 0.95rem;
+    min-height: 35px;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+}
+
+/* 📱 Extra Small Devices */
+@media (max-width: 480px) {
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px;
+  }
+
+  .card {
+    height: 250px;
+    max-width: 135px;
+  }
+
+  .image {
+    height: 160px;
+  }
+
+  .cardTitle {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    min-height: 30px;
+  }
+
+  .price {
+    margin-top: 0px;
+    font-size: 0.95rem;
+  }
+}

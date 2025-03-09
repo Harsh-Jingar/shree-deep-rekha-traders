@@ -1,0 +1,45 @@
+/* 🌟 Products Page Styling */
+.productsSection {
+  /* width: 100%; */
+  padding: 60px 10px; /* Reduce side padding */
+  background: linear-gradient(to right, #ffffff, #f8f9f9);
+  text-align: center;
+  min-height: 100vh;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* ✅ Main Container */
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* 🔹 Heading */
+.heading {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+/* 🔹 Underline Effect */
+.heading::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #0073e6;
+  margin: 10px auto 0;
+  border-radius: 5px;
+  transition: width 0.3s ease-in-out;
+}
+
+.heading:hover::after {
+  width: 120px;
+}
+

@@ -1,0 +1,196 @@
+.container {
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Stylish Category Title */
+.title {
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  background-color: black;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #ff3d00;
+  margin: 6px auto 0;
+  border-radius: 2px;
+}
+
+/* Horizontal Slider (Flipkart Style) */
+.horizontalSliderContainer {
+  margin-bottom: 20px;
+}
+/* Wrap Horizontal Slider in a Box */
+.horizontalSliderBox {
+  background: #f8f8f8;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.horizontalSlider {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  max-width: 100%;
+}
+
+.horizontalSlider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Product Card (Slider Items) */
+.horizontalCard {
+  flex: 0 0 auto;
+  width: 160px;
+  text-align: center;
+  color: black;
+  scroll-snap-align: center;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  border: 1px solid #ddd;
+  transition: transform 0.3s ease-in-out;
+}
+
+.horizontalCard:hover {
+  transform: translateY(-5px);
+}
+
+.horizontalSlider a {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+/* Center Images Properly */
+.imageWrapper {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+
+.horizontalCard:hover .image {
+  transform: scale(1.05);
+}
+
+/* Card Details */
+.cardDetails {
+  margin-top: 6px;
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.discount {
+  font-size: 0.9rem;
+  color: red;
+}
+
+/* Grid Categories */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Grid Category */
+.gridCategory {
+  background: #f8f8f8;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid of Products Inside Category */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+/* Grid Card */
+.gridCard {
+  background: white;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.gridCard a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.gridCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .horizontalSliderContainer {
+    margin-bottom: 15px;
+    padding: 0 10px;
+  }
+
+  .horizontalSlider {
+    justify-content: flex-start;
+    padding: 5px 0;
+  }
+
+  .horizontalCard {
+    width: 85%;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .gridContainer {
+    grid-template-columns: 1fr;
+    overflow: hidden;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}

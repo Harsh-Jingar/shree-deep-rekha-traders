@@ -1,0 +1,137 @@
+/* ✅ Reviews Section - Light Theme with Smooth Animation */
+.reviews {
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
+  padding: 80px 20px;
+  text-align: center;
+  border-top: 2px solid #e0e0e0;
+  
+  /* 📌 Added Margin on All Sides */
+  margin: 0 20px;
+  max-width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 📌 Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 🏷️ Heading */
+.heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 🔲 Reviews Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* 📝 Review Card */
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 1px solid #ddd;
+  opacity: 0; /* Initial state for animation */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* ✅ Smooth Hover Effect */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Subtle Glow Effect on Hover */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* 👤 Avatar Placeholder */
+.avatar {
+  width: 60px;
+  height: 60px;
+  background: #f1f1f1;
+  color: #555;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  text-transform: uppercase;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 💬 Review Text */
+.reviewText {
+  color: #666;
+  font-style: italic;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* 🏷️ Reviewer Name */
+.reviewerName {
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+/* ⭐ Star Ratings */
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.starFilled {
+  color: #f4b400;
+  font-size: 20px;
+}
+
+.starEmpty {
+  color: #bbb;
+  font-size: 20px;
+}
+
+/* 🎨 Responsive Adjustments */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 28px;
+  }
+  .reviews {
+    padding: 60px 15px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}

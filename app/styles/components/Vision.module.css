@@ -1,0 +1,263 @@
+/* 🌟 Vision Section */
+.vision {
+  background: linear-gradient(to right, #ffffff, #f9f9f9);
+  padding: 80px 20px;
+  text-align: center;
+  opacity: 0; /* Initial animation state */
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* ✅ Make Section Visible */
+.vision.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 📌 Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 🔹 Heading */
+.heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+/* ✅ Blue Underline Effect */
+.heading::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 4px;
+  background: #0073e6;
+  margin: 15px auto 0;
+  border-radius: 2px;
+  transition: width 0.3s ease-in-out;
+}
+
+.visible .heading {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 📌 Subheading */
+.subheading {
+  font-size: 26px;
+  font-weight: 600;
+  color: #0056b3;
+  margin-top: 40px;
+  text-transform: capitalize;
+}
+
+/* ✅ Black Underline Effect */
+.subheading::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 4px;
+  background: #000000;
+  margin: 15px auto 0;
+  border-radius: 2px;
+  transition: width 0.3s ease-in-out;
+}
+
+/* 📌 Text Content */
+.description, .infoText {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.8; /* Better spacing */
+  max-width: 800px;
+  margin: 0 auto 20px;
+  text-align: justify; /* Ensure justified text */
+}
+
+/* 🔲 List Styling */
+.list {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 25px auto;
+  text-align: justify;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  color: #444;
+  padding: 12px 18px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.listItem:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* 🚀 Icons */
+.icon {
+  font-size: 22px;
+  color: #0073e6;
+}
+
+/* 🎯 CTA Button */
+.cta {
+  margin-top: 30px;
+}
+
+.cta p {
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 30px;
+  /* text-align: justify; */
+}
+
+.ctaButton {
+  background: #0073e6;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.ctaButton:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 95%;
+  }
+
+  .heading {
+    font-size: 28px;
+  }
+
+  .subheading {
+    font-size: 24px;
+  }
+
+  .description, .infoText {
+    font-size: 17px;
+    text-align: justify;
+  }
+
+  .list {
+    max-width: 100%;
+    text-align: justify;
+  }
+
+  .listItem {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .ctaButton {
+    font-size: 16px;
+  }
+}
+
+/* 📱 Small Devices - Mobile Optimized */
+@media (max-width: 768px) {
+  .vision {
+    padding: 50px 15px;
+  }
+
+  .heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .subheading {
+    font-size: 20px;
+    margin-top: 25px;
+  }
+
+  .description, .infoText {
+    font-size: 15px;
+    text-align: justify; /* Ensure justified alignment */
+  }
+
+  .list {
+    text-align: justify;
+  }
+
+  .listItem {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .cta p {
+    font-size: 16px;
+    text-align: justify;
+  }
+
+  .ctaButton {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+}
+
+/* 📱 Extra Small Devices */
+@media (max-width: 480px) {
+  .heading {
+    font-size: 22px;
+  }
+
+  .subheading {
+    font-size: 18px;
+  }
+
+  .description, .infoText {
+    font-size: 14px;
+    text-align: justify;
+  }
+
+  .listItem {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .cta p {
+    font-size: 14px;
+    text-align: justify;
+  }
+
+  .ctaButton {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+}
+
+/* 🎬 Fade-in Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

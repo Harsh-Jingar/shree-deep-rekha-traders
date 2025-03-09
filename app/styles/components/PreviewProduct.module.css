@@ -1,0 +1,163 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  width: 80%;
+  max-width: 900px;
+  padding: 20px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;  /* Image on the left, content on the right */
+  gap: 20px;
+  align-items: center;
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.thumbnail {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.thumbnail:hover {
+  border-color: #007bff;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}
+
+.price {
+  font-size: 20px;
+  color: #e60023;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.4;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center; /* ✅ Ensures button is centered properly */
+  margin-top: 20px;
+  width: 100%;
+}
+
+.whatsappButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #25d366;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+  width: fit-content;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.whatsappButton:hover {
+  background-color: #1eb747;
+}
+
+.whatsappIcon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+/* ✅ Responsive (Mobile) */
+@media (max-width: 768px) {
+  .buttonWrapper {
+    justify-content: center;
+    display: flex;
+    width: 100%;
+  }
+
+  .whatsappButton {
+    width: 90%; /* ✅ Ensures full width on mobile */
+    text-align: center;
+  }
+}
+
+
+/* ✅ Mobile Responsive */
+@media (max-width: 768px) {
+  .modal {
+    grid-template-columns: 1fr;
+    text-align: center;
+    height: 85vh;
+    overflow-y: auto;
+    gap: 0px;
+  }
+
+  .imageContainer {
+    align-items: center;
+  }
+
+  .thumbnails {
+    justify-content: center;
+  }
+
+  .details {
+    align-items: center;
+    gap: 0px;
+  }
+}
+

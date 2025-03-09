@@ -1,0 +1,208 @@
+/* 📌 About Section */
+.about {
+  background: linear-gradient(to right, #f8f9fa, #ffffff);
+  padding: 80px 20px;
+  text-align: center;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* 📌 Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 🔹 Heading */
+.heading {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+/* ✅ Blue Underline Effect */
+.heading::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 4px;
+  background: #0073e6;
+  margin: 15px auto 0;
+  border-radius: 2px;
+  transition: width 0.3s ease-in-out;
+}
+
+/* 📌 Subheading */
+.subheading {
+  font-size: 1.8rem;
+  color: #0073e6;
+  font-weight: bold;
+  margin-top: 30px;
+  text-transform: capitalize;
+}
+
+/* ✅ Black Underline Effect */
+.subheading::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 4px;
+  background: #000000;
+  margin: 15px auto 0;
+  border-radius: 2px;
+  transition: width 0.3s ease-in-out;
+}
+
+/* 📌 Main Description */
+.description,
+.infoText {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.8; /* Better spacing */
+  max-width: 900px;
+  margin: 0 auto 20px;
+  text-align: justify; /* Justify text for better readability */
+}
+
+/* ✅ Bullet List */
+.list {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 25px auto;
+  text-align: left;
+}
+
+.list li {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.list li::before {
+  content: "✔️";
+  color: #28a745;
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+/* 📞 Call to Action */
+.cta {
+  margin-top: 40px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* ✅ CTA Button */
+.ctaButton {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #28a745;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+/* 📱 Responsive Design for Tablets */
+@media (max-width: 1024px) {
+  .about {
+    padding: 60px 15px;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .heading {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .subheading {
+    font-size: 1.6rem;
+    margin-top: 20px;
+  }
+
+  .description,
+  .infoText {
+    font-size: 1.1rem;
+    text-align: justify; /* Ensure justified text */
+  }
+
+  .list {
+    text-align: justify;
+  }
+
+  .list li {
+    font-size: 1rem;
+    justify-content: flex-start; /* Align text properly */
+  }
+
+  .cta {
+    font-size: 1rem;
+  }
+
+  .ctaButton {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+/* 📱 Optimized for Small Mobile Screens */
+@media (max-width: 600px) {
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .subheading {
+    font-size: 1.4rem;
+  }
+
+  .description,
+  .infoText {
+    font-size: 1rem;
+    text-align: justify; /* Ensuring justified alignment on mobile */
+  }
+
+  .list {
+    text-align: justify;
+  }
+
+  .list li {
+    font-size: 0.95rem;
+    justify-content: flex-start;
+  }
+
+  .ctaButton {
+    font-size: 0.95rem;
+    padding: 10px 18px;
+  }
+}
+
+/* 🎬 Fade-in Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

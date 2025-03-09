@@ -1,0 +1,197 @@
+/* Global Header Styling */
+.header {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative; /* ✅ Ensures menu stays inside */
+}
+
+/* Logo Styling */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+/* ✅ Added shadow effect for logo */
+.logo img {
+  width: 60px; /* Increased size */
+  height: 60px; /* Ensures it stays round */
+  border-radius: 50%; /* Makes it round */
+  object-fit: cover; /* Ensures proper image scaling */
+}
+
+/* ✅ Business name with shadow */
+.logo h1 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); */
+  transition: color 0.3s ease-in-out;
+}
+
+/* ✅ Business name hover effect */
+.logo h1:hover {
+  color: #1057a2;
+}
+
+/* Search Bar */
+.searchContainer {
+  position: relative;
+  width: 250px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.searchInput:focus {
+  border-color: black;
+}
+
+/* Search Suggestions */
+.suggestions {
+  position: absolute;
+  width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+  top: 35px;
+  left: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 99;
+}
+
+.suggestions li {
+  padding: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.suggestions li:hover {
+  background: #f1f1f1;
+}
+/* ✅ Highlight Search Links */
+.suggestions li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.suggestions li a:hover {
+  color: #0073e6;
+}
+/* Navigation Links */
+.navLinks {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+/* ✅ Navigation Links - Desktop */
+.navLinks li a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s ease-in-out;
+  position: relative;
+}
+
+/* ✅ Underline effect on hover */
+.navLinks li a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background-color: #1057a2;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.navLinks li a:hover::after {
+  width: 100%;
+}
+
+.navLinks li a:hover {
+  color: #1057a2;
+}
+
+/* Hamburger Menu Button */
+.menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .logo h1{
+    font-size: 20px;
+  }
+  .searchContainer {
+    width: auto;
+  }
+  .searchInput {
+    width: 75%;
+    font-size: 10px;
+  }
+
+  .menuToggle {
+    display: block;
+  }
+
+  /* ✅ Fixed Mobile Navigation Overflow */
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* ✅ Ensures menu stays below navbar */
+    right: 0; /* ✅ Aligns to the right */
+    background: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px; /* ✅ Keeps width contained */
+  }
+
+  .navLinks.open {
+    display: flex;
+  }
+
+  .navLinks li {
+    padding: 10px;
+    text-align: left;
+  }
+}

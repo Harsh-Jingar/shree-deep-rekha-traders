@@ -1,0 +1,30 @@
+/* ✅ ScrollToTop Button Styles */
+.scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    color: white;
+    font-size: 24px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  /* ✅ Visible State */
+  .scrollToTop.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* ✅ Hover Effect */
+  .scrollToTop:hover {
+    background-color: #0056b3;
+  }
+  

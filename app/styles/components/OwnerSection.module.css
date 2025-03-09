@@ -1,0 +1,268 @@
+/* 📌 Owner Section Styling */
+.owner {
+  background: linear-gradient(to right, #ffffff, #f9f9f9);
+  padding: 80px 20px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* 🎬 Section Appears on Scroll */
+.owner.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 📌 Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 🏆 Heading */
+.heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* ✅ Blue Underline Effect */
+.heading::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 4px;
+  background: #0073e6;
+  margin: 15px auto 0;
+  border-radius: 2px;
+  transition: width 0.3s ease-in-out;
+}
+
+/* 📸 Owner Wrapper */
+.ownerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+/* 📷 Owner Photo */
+.ownerPhoto {
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.ownerPhoto img {
+  border-radius: 50%;
+  width: 400px;
+  height: auto;
+  object-fit: cover;
+}
+
+.ownerPhoto:hover {
+  transform: scale(1.05);
+}
+
+/* 📜 Owner Details */
+.ownerDetails {
+  max-width: 600px;
+  text-align: justify;
+}
+
+/* 🎭 Subheading */
+.subheading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0073e6;
+  margin-bottom: 10px;
+}
+
+/* 📝 Description */
+.description {
+  font-size: 18px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* 🏠 Paragraph */
+.paragraph {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* 📞 Contact Heading */
+.contactHeading {
+  font-size: 20px;
+  font-weight: 700;
+  color: #222;
+  margin-top: 20px;
+}
+
+/* 📱 Contact List */
+.contactList {
+  list-style: none;
+  padding: 0;
+}
+
+.contactList li {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 8px;
+  text-align: justify;
+}
+
+.contactList a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #0073e6;
+  transition: color 0.3s ease-in-out;
+}
+
+.contactList a:hover {
+  color: #005bb5;
+}
+
+/* ✨ Owner Quote */
+.quote {
+  font-size: 18px;
+  font-style: italic;
+  color: #666;
+  border-left: 4px solid #0073e6;
+  padding-left: 15px;
+  margin-top: 15px;
+  transition: all 0.3s ease-in-out;
+  text-align: justify;
+}
+
+.quote:hover {
+  border-color: #005bb5;
+}
+
+/* 📱 Responsive - Tablet View */
+@media (max-width: 1024px) {
+  .ownerWrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .ownerPhoto img {
+    width: 300px;
+  }
+
+  .ownerDetails {
+    max-width: 90%;
+    text-align: justify;
+  }
+}
+
+/* 📱 Responsive - Mobile View */
+@media (max-width: 768px) {
+  .owner {
+    padding: 60px 15px;
+  }
+
+  .heading {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .subheading {
+    font-size: 22px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .paragraph {
+    font-size: 15px;
+  }
+
+  .ownerWrapper {
+    gap: 30px;
+  }
+
+  .ownerPhoto img {
+    width: 250px;
+  }
+
+  .ownerDetails {
+    max-width: 100%;
+    text-align: justify;
+  }
+
+  .contactHeading {
+    font-size: 18px;
+  }
+
+  .contactList li {
+    font-size: 14px;
+  }
+
+  .quote {
+    font-size: 16px;
+  }
+}
+
+/* 📱 Extra Small Screens */
+@media (max-width: 480px) {
+  .heading {
+    font-size: 24px;
+  }
+
+  .subheading {
+    font-size: 18px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .ownerPhoto img {
+    width: 200px;
+  }
+
+  .ownerDetails {
+    text-align: justify;
+  }
+
+  .contactHeading {
+    font-size: 16px;
+  }
+
+  .contactList li {
+    font-size: 13px;
+  }
+
+  .quote {
+    font-size: 14px;
+  }
+}
+
+/* 🎬 Fade-in Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

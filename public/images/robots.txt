@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow any API routes from being indexed
+Disallow: /api/
+
+# Sitemap reference
+Sitemap: https://www.shreedeeprekhatraders.in/sitemap.xml
