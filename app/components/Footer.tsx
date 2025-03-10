@@ -1,5 +1,7 @@
+// components/Footer.tsx
+import Image from "next/image";
 import Link from "next/link";
-import { FaInstagram } from "react-icons/fa"; // ✅ Import Instagram icon
+import { FaInstagram } from "react-icons/fa";
 import styles from "app/styles/components/Footer.module.css";
 
 export default function Footer() {
@@ -8,7 +10,14 @@ export default function Footer() {
       <div className={styles.footerContainer}>
         {/* Logo and Name */}
         <div className={styles.logoContainer}>
-          <img src="/images/logo.png" alt="Shree Deep Rekha Traders Logo" />
+          <Image
+            src="/images/logo.png"
+            alt="Shree Deep Rekha Traders Logo"
+            width={80}
+            height={80}
+            loading="eager" // Prevents lazy-loading placeholder issues
+            className={styles.logoImage}
+          />
           <h3>Shree Deep Rekha Traders</h3>
         </div>
 
@@ -47,7 +56,7 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Social Media & Quick Links */}
+        {/* Footer Links & Instagram */}
         <div className={styles.footerBottom}>
           <div className={styles.footerLinks}>
             <Link href="/products">Products</Link>
@@ -62,11 +71,10 @@ export default function Footer() {
               href="https://www.instagram.com/shree_deep_rekha_traders/"
               target="_blank"
             >
-              Follow Us on{" "}
               <span className={styles.icon}>
                 <FaInstagram />
-              </span>{" "}
-              Instagram
+              </span>
+              Follow Us on Instagram
             </Link>
           </div>
         </div>

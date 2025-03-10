@@ -35,6 +35,11 @@
   border-radius: 50%; /* Makes it round */
   object-fit: cover; /* Ensures proper image scaling */
 }
+.logoImage {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 
 /* ✅ Business name with shadow */
 .logo h1 {

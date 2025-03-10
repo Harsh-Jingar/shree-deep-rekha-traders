@@ -30,7 +30,7 @@ export default function PreviewProduct({ product, onClose }: Props) {
 🔍 Description: ${product.description}
 Can you provide more details?`;
 
-  const whatsappLink = `https://wa.me/919876543210?text=${encodeURIComponent(
+  const whatsappLink = `https://wa.me/919328991856?text=${encodeURIComponent(
     whatsappMessage
   )}`;
 

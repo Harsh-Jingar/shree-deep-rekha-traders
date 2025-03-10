@@ -18,7 +18,11 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
+  alternates: {
+    canonical: "https://www.shreedeeprekhatraders.in/about",
+  },
 };
+
 export default function AboutPage() {
   return (
     <main>
