@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
+  alternates: {
+    canonical: "https://www.shreedeeprekhatraders.in/",
+  },
 };
 
 export default function RootLayout({
@@ -48,7 +51,6 @@ export default function RootLayout({
         <meta name="author" content="Shree Deep Rekha Traders" />
         <meta name="application-name" content="Shree Deep Rekha Traders" />
         <meta name="theme-color" content="#ffffff" />
-        <link rel="canonical" href="https://www.shreedeeprekhatraders.in" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
