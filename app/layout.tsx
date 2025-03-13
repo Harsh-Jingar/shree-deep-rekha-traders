@@ -48,8 +48,9 @@ export default function RootLayout({
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
-        <meta name="author" content="Shree Deep Rekha Traders" />
+        <meta name="author" content="Mr. Dipak Jingar" />
         <meta name="application-name" content="Shree Deep Rekha Traders" />
+        <meta name="site-name" content="Shree Deep Rekha Traders" />
         <meta name="theme-color" content="#ffffff" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
