@@ -60,6 +60,8 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+        <link rel="manifest" href="/site.webmanifest" />
+
         <link
           rel="preload"
           href="/fonts/Poppins-Regular.woff2"
