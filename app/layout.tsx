@@ -3,11 +3,11 @@ import "app/styles/globals.css";
 import Header from "app/components/Header";
 import Footer from "app/components/Footer";
 import Script from "next/script";
+import { useAnalytics } from "app/hooks/useAnalytics";
 
 export const metadata: Metadata = {
   title: {
-    default:
-      "Plastic Household Products Wholesaler & Supplier in Ahmedabad | Shree Deep Rekha Traders",
+    default: "Plastic Household Products Wholesaler & Supplier in Ahmedabad | Shree Deep Rekha Traders",
     template: "%s | Shree Deep Rekha Traders",
   },
   description:
@@ -15,10 +15,8 @@ export const metadata: Metadata = {
   keywords:
     "plastic household products, plastic supplier in Ahmedabad, kitchen storage containers, plastic wholesaler Gujarat, cleaning products supplier, buy plastic items online, home storage solutions, kitchen plasticware, wholesale plastic items India",
   openGraph: {
-    title:
-      "Best Plastic Household Products Supplier in Ahmedabad | Wholesale & Retail",
-    description:
-      "Find top-quality plastic household items, kitchen storage solutions, and cleaning products from Ahmedabad's best plastic wholesaler. Order in bulk at competitive prices!",
+    title: "Best Plastic Household Products Supplier in Ahmedabad | Wholesale & Retail",
+    description: "Find top-quality plastic household items, kitchen storage solutions, and cleaning products from Ahmedabad's best plastic wholesaler. Order in bulk at competitive prices!",
     url: "https://www.shreedeeprekhatraders.in",
     siteName: "Shree Deep Rekha Traders",
     images: [
@@ -37,11 +35,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+// ✅ GA tracking client wrapper
+function AnalyticsWrapper() {
+  useAnalytics();
+  return null;
+}
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
@@ -54,17 +54,9 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+        <link rel="preload" href="/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
 
-        {/* ✅ Font Preload Optimization - Inserted Here */}
-        <link
-          rel="preload"
-          href="/fonts/Poppins-Regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-
-        {/* ✅ Structured Data using JSON-LD for SEO */}
+        {/* ✅ Structured Data for SEO */}
         <Script
           id="structured-data"
           type="application/ld+json"
@@ -75,12 +67,10 @@ export default function RootLayout({
               name: "Shree Deep Rekha Traders",
               url: "https://www.shreedeeprekhatraders.in",
               logo: "https://www.shreedeeprekhatraders.in/images/logo.png",
-              description:
-                "Leading plastic household products supplier in Ahmedabad. Wholesale and retail plastic containers, kitchen storage, and cleaning products.",
+              description: "Leading plastic household products supplier in Ahmedabad. Wholesale and retail plastic containers, kitchen storage, and cleaning products.",
               address: {
                 "@type": "PostalAddress",
-                streetAddress:
-                  "Near Rajiv Gandhi Bhavan, Memco Cross Road, Naroda Road",
+                streetAddress: "Near Rajiv Gandhi Bhavan, Memco Cross Road, Naroda Road",
                 addressLocality: "Ahmedabad",
                 addressRegion: "Gujarat",
                 postalCode: "382345",
@@ -98,9 +88,29 @@ export default function RootLayout({
             }),
           }}
         />
+
+        {/* ✅ Google Analytics Scripts */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-Y8JHHNNEV1`}
+          strategy="afterInteractive"
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-Y8JHHNNEV1');
+            `,
+          }}
+        />
       </head>
+
       <body>
         <Header />
+        <AnalyticsWrapper /> {/* 👈 Client-side tracking hook */}
         {children}
         <Footer />
       </body>
