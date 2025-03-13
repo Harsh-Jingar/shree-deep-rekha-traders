@@ -3,7 +3,7 @@ import "app/styles/globals.css";
 import Header from "app/components/Header";
 import Footer from "app/components/Footer";
 import Script from "next/script";
-import { useAnalytics } from "app/hooks/useAnalytics";
+import { AnalyticsProvider } from "app/components/AnalyticsProvider";
 
 export const metadata: Metadata = {
   title: {
@@ -34,12 +34,6 @@ export const metadata: Metadata = {
     canonical: "https://www.shreedeeprekhatraders.in/",
   },
 };
-
-// ✅ GA tracking client wrapper
-function AnalyticsWrapper() {
-  useAnalytics();
-  return null;
-}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -110,7 +104,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
       <body>
         <Header />
-        <AnalyticsWrapper /> {/* 👈 Client-side tracking hook */}
+        <AnalyticsProvider /> {/* 👈 Client-side tracking hook */}
         {children}
         <Footer />
       </body>
