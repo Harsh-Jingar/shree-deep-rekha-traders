@@ -5,6 +5,10 @@ import Footer from "app/components/Footer";
 import Script from "next/script";
 import { AnalyticsProvider } from "app/components/AnalyticsProvider";
 import { Suspense } from "react"; // ✅ Add this
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
+
 
 export const metadata: Metadata = {
   title: {
@@ -125,6 +129,8 @@ export default function RootLayout({
           <AnalyticsProvider />
         </Suspense>
         {children}
+        <Analytics />
+        <SpeedInsights />
         <Footer />
       </body>
     </html>
